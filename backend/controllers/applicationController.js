@@ -175,3 +175,51 @@ exports.updateApplication = async (req, res) => {
     }
 };
 
+// GET /api/recommendations/:student_id
+exports.getRecommendations = async (req, res) => {
+    try {
+        const { student_id } = req.params;
+
+        // 1. Get the student's scores
+        const studentResult = await db.query(
+            'SELECT gpa, english_test_score FROM students WHERE id = $1',
+            [student_id]
+        );
+
+        if (studentResult.rows.length === 0) {
+            return res.status(404).json({ error: "Student not found" });
+        }
+
+        const { gpa, english_test_score } = studentResult.rows[0];
+
+        // 2. Fetch all programs and their university names
+        // Note: Assuming your programs table has a 'min_gpa' column
+        const programsResult = await db.query(`
+            SELECT p.id, p.name as program, u.name as university, p.min_gpa
+            FROM programs p
+            JOIN universities u ON p.university_id = u.id
+        `);
+
+        // 3. Calculate match score for each program
+        const recommendations = programsResult.rows.map(prog => {
+            // Simple logic: GPA ratio (you can make this more complex)
+            let score = gpa / (prog.min_gpa || 3.0); 
+            
+            return {
+                university: prog.university,
+                program: prog.program,
+                match_score: Math.min(score, 0.99).toFixed(2) // Keep it under 1.0 for realism
+            };
+        });
+
+        // 4. Sort by highest match first
+        recommendations.sort((a, b) => b.match_score - a.match_score);
+
+        res.json(recommendations.slice(0, 5)); // Return top 5 matches
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server error" });
+    }
+};
+
