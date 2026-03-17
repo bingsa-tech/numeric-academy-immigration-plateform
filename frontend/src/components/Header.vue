@@ -4,7 +4,7 @@
       
       <div class="text-2xl font-bold text-indigo-700 flex items-center gap-2">
         <router-link to="/" class="flex items-center gap-2">
-          <span>🇨🇦</span> PNIMMACA
+           ENIMA
         </router-link>
       </div>
 

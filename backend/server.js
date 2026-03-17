@@ -10,6 +10,7 @@ const programRoutes = require("./routes/programRoutes")
 const applicationRoutes = require("./routes/applicationRoutes")
 const documentRoutes = require("./routes/documentRoutes")   
 const universityRoutes = require("./routes/universityRoutes")
+const newsRoutes = require("./routes/newsRoutes")
 const app = express()
 
 app.use(cors({origin: 'http://localhost:3001', 
@@ -24,6 +25,7 @@ app.use("/api/students", studentRoutes)
 app.use("/api/programs", programRoutes) 
 app.use("/api/applications", applicationRoutes)
 app.use("/api/documents", documentRoutes) 
+app.use("/api/news", newsRoutes)
 
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`-----------------------------------------`);
