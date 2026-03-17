@@ -3,8 +3,8 @@ const pool = require("../config/db")
 exports.createUser = async (email, password) => {
 
 return await pool.query(
-"INSERT INTO users(email,password_hash) VALUES($1,$2) RETURNING *",
-[email,password]
+"INSERT INTO users(email,password_hash, role) VALUES($1,$2,$3) RETURNING *",
+[email,password, role]
 )
 
 }
