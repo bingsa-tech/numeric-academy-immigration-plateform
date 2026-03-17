@@ -1,11 +1,18 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from '@/components/Header.vue';
+import Footer from '@/components/Footer.vue';
+</script>
+
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
-</template>
+  <div class="min-h-screen w-full flex flex-col bg-gray-50">
+    
+    <Header />
 
-<style scoped></style>
+    <main class="flex-1 w-full max-w-screen-2xl mx-auto p-4 md:p-8">
+      <router-view />
+    </main>
+
+    <Footer />
+  </div>
+</template>
