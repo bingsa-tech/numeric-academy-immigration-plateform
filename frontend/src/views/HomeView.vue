@@ -1,21 +1,21 @@
 <template>
   <div class="min-h-screen bg-gray-50 font-sans scroll-smooth text-gray-900">
-    
     <header class="relative bg-indigo-950 py-32 px-4 overflow-hidden">
+      
       <div class="absolute inset-0">
         <img 
           src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80" 
           alt="Campus Canada" 
           class="w-full h-full object-cover opacity-30 scale-105"
         >
-        <div class="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/40 to-indigo-950/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-indigo-900/40 to-indigo-950/90"></div>
       </div>
       
       <div class="relative max-w-6xl mx-auto text-center text-white">
         <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide uppercase bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
-          Accompagnement Expert 2026
+          Nous pouvons ensemble
         </span>
-        <h1 class="text-5xl md:text-7xl font-black mb-8 leading-[1.1] tracking-tight">
+        <h1 class="text-5xl md:text-7xl font-blue mb-8 leading-[1.1] tracking-tight">
           Réalisez votre projet d'études au <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">Canada</span>
         </h1>
         <p class="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
@@ -65,7 +65,7 @@
     <section id="services" class="py-24 bg-gray-100 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20">
-          <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Services d'accompagnement 360°</h2>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Services d'accompagnement permanent</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
             Une expertise pointue pour chaque étape critique de votre parcours migratoire.
           </p>
@@ -157,7 +157,7 @@
         </div>
       </div>
     </section>
-
+   
     <section id="contact" class="py-24 bg-white px-6">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">

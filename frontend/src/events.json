@@ -1,0 +1,144 @@
+{
+  "evenements_professionnels_canada_2026": [
+    {
+      "categorie": "Technologie, IA et Innovation",
+      "evenements": [
+        {
+          "nom": "Web Summit Vancouver 2026",
+          "date": "11-14 mai 2026",
+          "lieu": "Vancouver, BC",
+          "description": "L'un des plus grands rassemblements technologiques mondiaux axé sur l'innovation et l'investissement.",
+          "secteurs": ["TIC", "IA", "Fintech", "Cleantech"],
+          "lien_officiel": "https://www.tradecommissioner.gc.ca/en/trade-events-training/2026/05/web-summit-vancouver.html"
+        },
+        {
+          "nom": "N³ Summit (Automation, AI & Robotics)",
+          "date": "31 mars - 1 avril 2026",
+          "lieu": "Metro Toronto Convention Centre, Toronto, ON",
+          "description": "Sommet pour les décideurs sur l'IA, la robotique, le quantique et la défense.",
+          "secteurs": ["IA", "Robotique", "Manufacturier avancé", "Défense"],
+          "lien_officiel": "https://www.ngen.ca/en/n3summit"
+        },
+        {
+          "nom": "HCI International 2026",
+          "date": "26-31 juillet 2026",
+          "lieu": "Palais des congrès de Montréal, QC",
+          "description": "Conférence mondiale sur l'interaction humain-machine et l'expérience utilisateur.",
+          "secteurs": ["HCI", "UX Design", "IA", "Cybersécurité"],
+          "lien_officiel": "https://2026.hci.international/"
+        },
+        {
+          "nom": "Esri Canada User Conference (UC2026)",
+          "date": "21-22 octobre 2026",
+          "lieu": "Toronto Congress Centre, Toronto, ON",
+          "description": "Événement majeur sur les systèmes d'information géographique (SIG) et l'intelligence géospatiale.",
+          "secteurs": ["SIG", "Géomatique", "Analyse de données"],
+          "lien_officiel": "https://www.esri.ca/en-ca/news-events/events/uc/2026/esricanada-uc/registration-details"
+        }
+      ]
+    },
+    {
+      "categorie": "Santé et Sciences de la Vie",
+      "evenements": [
+        {
+          "nom": "MEDTEQ+ Health Innovation Summit",
+          "date": "4-5 février 2026",
+          "lieu": "Grand Quai du Port de Montréal, QC",
+          "description": "Sommet biennal sur l'innovation technologique médicale et les collaborations en santé.",
+          "secteurs": ["Medtech", "Sciences de la vie"],
+          "lien_officiel": "https://www.medteq.ca/en/innovation-summit/"
+        },
+        {
+          "nom": "Digital Health Canada ON26",
+          "date": "19 mars 2026",
+          "lieu": "Metro Toronto Convention Centre, Toronto, ON",
+          "description": "Conférence annuelle sur la transformation numérique du système de santé en Ontario.",
+          "secteurs": ["Santé numérique", "Informatique clinique"],
+          "lien_officiel": "https://digitalhealthcanada.com/event-calendar/digital-health-canada-on26/"
+        },
+        {
+          "nom": "MaRS Impact Health",
+          "date": "23 avril 2026",
+          "lieu": "MaRS Centre, Toronto, ON",
+          "description": "Rencontre entre innovateurs, investisseurs et cliniciens pour accélérer les percées en biotech.",
+          "secteurs": ["Biotech", "Santé numérique", "Dispositifs médicaux"],
+          "lien_officiel": "https://impacthealth.marsdd.com/"
+        },
+        {
+          "nom": "e-Health 2026",
+          "date": "14-16 juin 2026",
+          "lieu": "Halifax, NS",
+          "description": "La plus importante conférence et foire commerciale sur la santé numérique au Canada.",
+          "secteurs": ["Santé numérique", "Télémédecine", "Gestion de données"],
+          "lien_officiel": "https://www.canhealth.com/events/"
+        }
+      ]
+    },
+    {
+      "categorie": "Affaires, RH et Leadership",
+      "evenements": [
+        {
+          "nom": "Salon de l'emploi et de la formation continue (Printemps)",
+          "date": "22-23 avril 2026",
+          "lieu": "Palais des congrès de Montréal, QC",
+          "description": "Grand événement de recrutement et de développement de carrière au Québec.",
+          "secteurs": ["RH", "Recrutement", "Formation"],
+          "lien_officiel": "https://ecarrieres.com/fr/"
+        },
+        {
+          "nom": "Dirigez avec impact (Conférence Les Affaires)",
+          "date": "11 juin 2026",
+          "lieu": "Hôtel Le Concorde, Québec, QC",
+          "description": "Conférence dédiée au leadership, au courage managérial et à l'influence.",
+          "secteurs": ["Management", "Leadership"],
+          "lien_officiel": "https://evenements.lesaffaires.com/collections/a-venir"
+        },
+        {
+          "nom": "Transformez vos pratiques RH",
+          "date": "4 novembre 2026",
+          "lieu": "Montréal, QC",
+          "description": "Focus sur l'innovation RH tout en préservant l'aspect humain au sein des organisations.",
+          "secteurs": ["RH", "Gestion du changement"],
+          "lien_officiel": "https://evenements.lesaffaires.com/collections/a-venir"
+        }
+      ]
+    },
+    {
+      "categorie": "Environnement, Mines et Municipal",
+      "evenements": [
+        {
+          "nom": "PDAC 2026 (Convention minière)",
+          "date": "1-4 mars 2026",
+          "lieu": "Toronto, ON",
+          "description": "Le plus grand congrès mondial sur l'exploration minière et l'exploitation.",
+          "secteurs": ["Mines", "Géologie", "Finance minière"],
+          "lien_officiel": "https://www.srk.com/en/events/pdac-2026"
+        },
+        {
+          "nom": "FCM Annual Conference & Trade Show",
+          "date": "4-7 juin 2026",
+          "lieu": "Edmonton Convention Centre, Edmonton, AB",
+          "description": "Le plus grand rassemblement d'élus municipaux au pays.",
+          "secteurs": ["Gouvernance municipale", "Infrastructures"],
+          "lien_officiel": "https://fcm.ca/en/events-training/conferences/annual-conference-and-trade-show"
+        },
+        {
+          "nom": "World Tunnel Congress 2026 (WTC)",
+          "date": "15-21 mai 2026",
+          "lieu": "Palais des congrès de Montréal, QC",
+          "description": "Congrès international sur les infrastructures souterraines et le génie civil.",
+          "secteurs": ["Génie civil", "Tunnels", "Transport"],
+          "lien_officiel": "https://wtc2026.ca/"
+        },
+        {
+          "nom": "Carbon Capture Canada (CCC)",
+          "date": "15-17 septembre 2026",
+          "lieu": "Edmonton Convention Centre, Edmonton, AB",
+          "description": "Seule convention nationale dédiée à la capture, l'utilisation et le stockage du carbone.",
+          "secteurs": ["Décarbonation", "Énergie propre", "Pétrole et Gaz"],
+          "lien_officiel": "https://www.carbonexpocanada.com/"
+        }
+      ]
+    }
+  ]
+}
