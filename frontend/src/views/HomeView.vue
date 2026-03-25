@@ -1,37 +1,7 @@
 <template>
   <div class="min-h-screen bg-gray-50 font-sans scroll-smooth text-gray-900">
-    <header class="relative bg-indigo-950 py-32 px-4 overflow-hidden">
-      
-      <div class="absolute inset-0">
-        <img 
-          src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1920&q=80" 
-          alt="Campus Canada" 
-          class="w-full h-full object-cover opacity-30 scale-105"
-        >
-        <div class="absolute inset-0 bg-gradient-to-b from-gray-950/80 via-indigo-900/40 to-indigo-950/90"></div>
-      </div>
-      
-      <div class="relative max-w-6xl mx-auto text-center text-white">
-        <span class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide uppercase bg-green-500/20 text-green-400 rounded-full border border-green-500/30">
-          Nous pouvons ensemble
-        </span>
-        <h1 class="text-5xl md:text-7xl font-blue mb-8 leading-[1.1] tracking-tight">
-          Réalisez votre projet d'études au <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">Canada</span>
-        </h1>
-        <p class="text-xl md:text-2xl mb-12 text-gray-300 max-w-3xl mx-auto leading-relaxed font-light">
-          De l'admission universitaire jusqu'à votre intégration locale. Un pont humain et transparent entre vos ambitions et la réalité canadienne.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-5">
-          <router-link to="/register" class="bg-green-500 hover:bg-green-400 text-indigo-950 px-10 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-green-900/20 transition-all hover:-translate-y-1 active:scale-95">
-            Évaluer mon dossier gratuitement
-          </router-link>
-          <a href="#services" class="bg-white/5 hover:bg-white/10 backdrop-blur-xl text-white border border-white/20 px-10 py-4 rounded-2xl font-bold text-lg transition-all hover:border-white/40">
-            Découvrir nos services
-          </a>
-        </div>
-      </div>
-    </header>
-
+    <Hero />
+    
     <section class="py-24 max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
@@ -62,6 +32,25 @@
       </div>
     </section>
 
+    <section class="w-full py-16 bg-slate-50/50 border-y border-slate-100">
+  
+  <div class="max-w-[1600px] mx-auto px-8 md:px-12">
+    
+    <div class="flex flex-col lg:flex-row gap-20 items-start">
+      
+      <div class="flex-1 w-full overflow-hidden">
+        <EventsService />
+      </div>
+
+      <div class="hidden lg:block w-px h-[500px] bg-gradient-to-b from-transparent via-slate-200 to-transparent self-center opacity-50"></div>
+
+      <aside class="w-full lg:w-[350px] lg:sticky lg:top-28 flex-shrink-0">
+        <ScholarshipsSidebar />
+      </aside>
+
+    </div>
+  </div>
+</section>
     <section id="services" class="py-24 bg-gray-100 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20">
@@ -84,35 +73,6 @@
       </div>
     </section>
 
-    <section id="seminaires" class="py-24 bg-white border-y border-gray-100">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div class="max-w-2xl">
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Séminaires & Masterclass</h2>
-            <p class="text-lg text-gray-500">Préparez votre profil professionnel avant même votre départ.</p>
-          </div>
-          <div class="hidden md:block h-px flex-grow bg-gray-100 mx-8"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="seminar in upcomingSeminars" :key="seminar.id" class="bg-gray-50 rounded-[2rem] border border-gray-100 p-8 hover:bg-white hover:shadow-xl transition-all duration-300">
-            <div class="flex items-center justify-between mb-6">
-              <span class="px-4 py-1 bg-indigo-100 text-indigo-700 rounded-full text-xs font-bold uppercase tracking-wider">
-                {{ formatDate(seminar.date) }}
-              </span>
-              <span class="text-xs font-semibold text-orange-600 px-3 py-1 bg-orange-50 rounded-full">
-                🔥 {{ seminar.placesLeft }} places
-              </span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-4">{{ seminar.title }}</h3>
-            <p class="text-gray-600 mb-8 line-clamp-3 text-sm leading-relaxed">{{ seminar.description }}</p>
-            <button @click="registerForSeminar(seminar.id)" class="w-full py-4 bg-white border border-indigo-100 text-indigo-600 font-bold rounded-xl hover:bg-indigo-600 hover:text-white transition-colors shadow-sm">
-              Réserver ma place
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section id="infos" class="py-24 bg-slate-50 px-6">
       <div class="max-w-7xl mx-auto">
@@ -197,6 +157,9 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
+import EventsService from '@/components/EventsSection.vue'
+import Hero from '@/components/Hero.vue'
+import ScholarshipsSidebar from '@/components/ScholarshipsSidebar.vue'
 
 const isSending = ref(false);
 const contact = reactive({ name: '', email: '', link: '', message: '' });

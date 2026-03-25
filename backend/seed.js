@@ -1,11 +1,11 @@
 // backend/seed.js
+require('dotenv').config();
 const db = require("./config/db");
 const fs = require("fs");
 const path = require("path");
 
 const seedDatabase = async () => {
   try {
-    // On force le chemin pour éviter les erreurs de dossier
     const absolutePath = path.join(__dirname, "data", "events.json");
     const fileContent = fs.readFileSync(absolutePath, "utf-8");
     const data = JSON.parse(fileContent);
@@ -13,23 +13,30 @@ const seedDatabase = async () => {
     console.log("🚀 Début de l'importation...");
 
     for (const categorieObj of data.evenements_professionnels_canada_2026) {
-      const nomCategorie = categorieObj.categorie;
+      const category = categorieObj.categorie;
 
       for (const ev of categorieObj.evenements) {
         const query = `
-          INSERT INTO events (nom, event_date, lieu, description, secteurs, lien_officiel, categorie)
+          INSERT INTO events (
+            name,
+            description,
+            date,
+            location,
+            category,
+            sectors,
+            official_link
+          )
           VALUES ($1, $2, $3, $4, $5, $6, $7)
         `;
-        
-        // PostgreSQL accepte les tableaux JS si la colonne est de type TEXT[]
+
         const values = [
-          ev.nom, 
-          ev.date, 
-          ev.lieu, 
-          ev.description, 
-          ev.secteurs, // [ "IA", "Robotique" ]
-          ev.lien_officiel,
-          nomCategorie
+          ev.nom,
+          ev.description,
+          ev.date,
+          ev.lieu,
+          category,
+          ev.secteurs, // TEXT[]
+          ev.lien_officiel
         ];
 
         await db.query(query, values);
@@ -39,8 +46,9 @@ const seedDatabase = async () => {
 
     console.log("⭐ Migration réussie !");
     process.exit();
+    console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
   } catch (err) {
-    console.error("❌ Erreur critique :", err.message);
+    console.error("❌ Erreur critique :", err);
     process.exit(1);
   }
 };
