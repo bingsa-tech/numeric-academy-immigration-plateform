@@ -31,26 +31,19 @@
         </div>
       </div>
     </section>
-
-    <section class="w-full py-16 bg-slate-50/50 border-y border-slate-100">
-  
-  <div class="max-w-[1600px] mx-auto px-8 md:px-12">
+    <EventsService />
+  <!-- widget bourse  -->
+<div class="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 z-50 w-[320px]">
+  <div class="relative group">
+    <div class="absolute -left-12 top-10 bg-emerald-600 text-white px-4 py-2 rounded-t-xl rotate-90 origin-bottom-left font-bold text-xs tracking-widest shadow-lg">
+      BOURSES 2026
+    </div>
     
-    <div class="flex flex-col lg:flex-row gap-20 items-start">
-      
-      <div class="flex-1 w-full overflow-hidden">
-        <EventsService />
-      </div>
-
-      <div class="hidden lg:block w-px h-[500px] bg-gradient-to-b from-transparent via-slate-200 to-transparent self-center opacity-50"></div>
-
-      <aside class="w-full lg:w-[350px] lg:sticky lg:top-28 flex-shrink-0">
-        <ScholarshipsSidebar />
-      </aside>
-
+    <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-[2.5rem] shadow-2xl p-2 transition-all duration-500 hover:scale-[1.02]">
+      <ScholarshipsSidebar />
     </div>
   </div>
-</section>
+</div>
     <section id="services" class="py-24 bg-gray-100 px-6">
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-20">
