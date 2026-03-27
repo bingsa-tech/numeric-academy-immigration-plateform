@@ -1,8 +1,30 @@
 <template>
   <div class="min-h-screen bg-gray-50 font-sans scroll-smooth text-gray-900">
     <Hero />
-    
-    <section class="py-24 max-w-7xl mx-auto px-6">
+
+    <div class="hidden 2xl:block fixed left-8 top-1/2 -translate-y-1/2 z-50 w-[300px]">
+      <div class="relative group">
+        <div class="absolute -right-12 top-10 bg-indigo-600 text-white px-4 py-2 rounded-t-xl rotate-90 origin-bottom-right font-bold text-xs tracking-widest shadow-lg">
+          INFO IRCC
+        </div>
+        <div class="bg-white/90 backdrop-blur-md border border-slate-200 rounded-[2.5rem] shadow-2xl p-2 transition-all duration-500 hover:scale-[1.02]">
+          <GuideSidebar :timeline="timeline" :alerts="alerts" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 z-50 w-[320px]">
+      <div class="relative group">
+        <div class="absolute -left-12 top-10 bg-emerald-600 text-white px-4 py-2 rounded-t-xl rotate-90 origin-bottom-left font-bold text-xs tracking-widest shadow-lg">
+          BOURSES 2026
+        </div>
+        <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-[2.5rem] shadow-2xl p-2 transition-all duration-500 hover:scale-[1.02]">
+          <ScholarshipsSidebar />
+        </div>
+      </div>
+    </div>
+
+    <section class="py-16 max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <div class="space-y-8">
           <h2 class="text-4xl font-extrabold text-gray-900 tracking-tight">
@@ -31,22 +53,12 @@
         </div>
       </div>
     </section>
+
     <EventsService />
-  <!-- widget bourse  -->
-<div class="hidden xl:block fixed right-8 top-1/2 -translate-y-1/2 z-50 w-[320px]">
-  <div class="relative group">
-    <div class="absolute -left-12 top-10 bg-emerald-600 text-white px-4 py-2 rounded-t-xl rotate-90 origin-bottom-left font-bold text-xs tracking-widest shadow-lg">
-      BOURSES 2026
-    </div>
-    
-    <div class="bg-white/80 backdrop-blur-xl border border-slate-200 rounded-[2.5rem] shadow-2xl p-2 transition-all duration-500 hover:scale-[1.02]">
-      <ScholarshipsSidebar />
-    </div>
-  </div>
-</div>
-    <section id="services" class="py-24 bg-gray-100 px-6">
+
+    <section id="services" class="py-16 bg-gray-100 px-6">
       <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
+        <div class="text-center mb-16">
           <h2 class="text-4xl font-extrabold text-gray-900 mb-6">Services d'accompagnement permanent</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto font-light">
             Une expertise pointue pour chaque étape critique de votre parcours migratoire.
@@ -66,51 +78,6 @@
       </div>
     </section>
 
-
-    <section id="infos" class="py-24 bg-slate-50 px-6">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-20">
-          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Guide & Actualités</h2>
-          <p class="text-gray-500">Restez informé des réformes IRCC 2026 en temps réel.</p>
-        </div>
-
-        <div class="grid lg:grid-cols-3 gap-16">
-          <div class="lg:col-span-2 space-y-12">
-            <h3 class="text-2xl font-bold flex items-center gap-3">
-              <span class="p-2 bg-indigo-600 text-white rounded-lg text-sm italic font-serif">STEP</span>
-              Le parcours type du candidat
-            </h3>
-            
-            <div class="space-y-4">
-              <div v-for="(step, index) in timeline" :key="index" class="relative pl-12 pb-10 border-l-2 border-indigo-100 last:border-0">
-                <div class="absolute -left-[11px] top-0 w-5 h-5 rounded-full bg-white border-4 border-indigo-600"></div>
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-                  <h4 class="font-bold text-lg text-gray-800 mb-1">{{ step.title }}</h4>
-                  <p class="text-gray-600 text-sm">{{ step.desc }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="space-y-6">
-            <h3 class="text-2xl font-bold text-gray-900 flex items-center gap-2 mb-8">
-              <span class="text-red-500">●</span> Alertes Légales
-            </h3>
-            
-            <div v-for="alert in alerts" :key="alert.title" :class="alert.bg" class="p-6 rounded-2xl border-l-4 shadow-sm">
-              <span :class="alert.text" class="text-[10px] font-black uppercase tracking-widest">{{ alert.tag }}</span>
-              <h4 class="font-bold text-gray-900 mt-2 text-sm">{{ alert.title }}</h4>
-              <p class="text-xs text-gray-600 mt-2 leading-relaxed">{{ alert.desc }}</p>
-            </div>
-
-            <button class="w-full py-4 bg-indigo-50 text-indigo-700 rounded-xl text-sm font-bold hover:bg-indigo-100 transition border border-indigo-100">
-              Journal Officiel IRCC 2026
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-   
     <section id="contact" class="py-24 bg-white px-6">
       <div class="max-w-4xl mx-auto">
         <div class="text-center mb-16">
@@ -122,11 +89,11 @@
           <form @submit.prevent="submitContact" class="grid md:grid-cols-2 gap-8">
             <div class="space-y-3">
               <label class="text-sm font-bold text-gray-700 ml-1">Nom complet</label>
-              <input v-model="contact.name" type="text" placeholder="Jean Dupont" class="w-full p-4 bg-white border border-gray-200 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all" required />
+              <input v-model="contact.name" type="text" placeholder="Samuel Biloloo" class="w-full p-4 bg-white border border-gray-200 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all" required />
             </div>
             <div class="space-y-3">
               <label class="text-sm font-bold text-gray-700 ml-1">Email professionnel</label>
-              <input v-model="contact.email" type="email" placeholder="jean@exemple.com" class="w-full p-4 bg-white border border-gray-200 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all" required />
+              <input v-model="contact.email" type="email" placeholder="samuel@exemple.com" class="w-full p-4 bg-white border border-gray-200 rounded-2xl outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all" required />
             </div>
             <div class="md:col-span-2 space-y-3">
               <label class="text-sm font-bold text-gray-700 ml-1">Lien CV / Dossier (Optionnel)</label>
@@ -153,6 +120,7 @@ import { ref, reactive } from 'vue';
 import EventsService from '@/components/EventsSection.vue'
 import Hero from '@/components/Hero.vue'
 import ScholarshipsSidebar from '@/components/ScholarshipsSidebar.vue'
+import GuideSidebar from '@/components/GuideSidebar.vue';
 
 const isSending = ref(false);
 const contact = reactive({ name: '', email: '', link: '', message: '' });

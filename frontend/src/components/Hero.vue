@@ -9,8 +9,7 @@
            style="background-image: radial-gradient(#000 0.5px, transparent 0.5px); background-size: 24px 24px;">
       </div>
     </div>
-
-    <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-20">
+    <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 py-10">
       <div class="flex flex-col items-center text-center">
         
         <div class="group cursor-default inline-flex items-center gap-3 px-5 py-2 mb-10 text-sm font-bold bg-white border border-slate-200/60 rounded-full shadow-sm hover:shadow-md transition-all duration-300">
@@ -39,10 +38,10 @@
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
           </router-link>
           
-          <a href="#services" 
+          <router-link to="/Events" 
             class="px-10 py-5 bg-white border border-slate-200 text-slate-950 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all duration-300 shadow-sm flex items-center justify-center">
             Explorer les bourses
-          </a>
+          </router-link>
         </div>
 
         <div class="mt-20 pt-10 border-t border-slate-100 w-full flex flex-wrap justify-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
